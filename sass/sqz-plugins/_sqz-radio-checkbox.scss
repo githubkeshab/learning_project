@@ -1,0 +1,65 @@
+.prettycheckbox, .prettyradio {
+    position:absolute; 
+    left:2px; 
+    top:0;
+}
+
+
+
+.sqz-pretty_label {
+    font-size:$bodyFontSize;
+    font-weight:$light;
+    color:$darkColor;
+    margin:0 0 0 10px;
+    max-width:90%;
+}
+.sqz-pretty_a {
+    background:none;
+    position:relative;
+    width:20px; 
+    height:24px;
+    @extend .sqz-borderBottomNone;
+}
+
+
+
+.prettyradio {
+    label {
+        @extend .sqz-pretty_label;
+    }
+    a {
+      // .sqz-pretty_a;
+        &:before {
+            content:'\f202';
+            font-family:$iconFont;
+            position:absolute; 
+            left:0; top:0; 
+            font-size:16px;
+            line-height: 24px;
+            color:tint($defaultColor,20%);
+        }
+        &.checked:before {
+            content:'\f201';
+        }
+    }
+} 
+.prettycheckbox {
+    label {
+        @extend .sqz-pretty_label;   
+    }
+    a { 
+        @extend .sqz-pretty_a;
+        &:before {
+            content:'\f202';
+            font-family:$iconFont;
+            position:absolute; 
+            left:0; top:0; 
+            font-size:16px;
+            line-height: 24px;
+            color:tint($defaultColor,20%);
+        }
+        &.checked:before {
+            content:'\f205';
+        }
+    }
+}

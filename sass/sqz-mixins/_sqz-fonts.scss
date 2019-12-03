@@ -1,0 +1,120 @@
+//fonts
+@mixin sqz-light {
+    font-family: $bodyFont;
+    font-weight: $regular;
+}
+
+@mixin sqz-regular {
+    font-family: $bodyFont;
+    font-weight: $regular;
+}
+
+@mixin sqz-medium {
+    font-family: $bodyFont;
+    font-weight: $regular;
+}
+
+@mixin sqz-bold {
+ font-family: "MuseoSans-700";
+ font-weight: $regular;
+}
+
+@mixin sqz-italic {
+    font-family: $bodyFont;
+    font-weight: $regular;
+    font-style: normal;
+}
+
+
+.sqz-light {
+    @include sqz-light;
+}
+
+.sqz-regular {
+    @include sqz-light;
+}
+
+.sqz-medium {
+    @include sqz-bold;
+}
+
+.sqz-bold {
+    @include sqz-bold;
+}
+
+.sqz-italic {
+    font-family: $bodyFont;
+    font-weight: $regular;
+    font-style: italic;
+}
+
+@mixin sqz-small {
+    font-size: 14px;
+    @include phone {
+        font-size: 12px;
+    }
+}
+@mixin sqz-h1 {
+    font-family: 'HurmeGeometricSans-Light';
+    font-size:28px;
+    line-height: 35px;
+    letter-spacing: 2.8px;
+    color: $defaultColor;
+    text-transform: uppercase;
+    strong, span {
+        font-family: $headingFont;
+    }
+}
+
+@mixin sqz-h2 {
+    font-family: $headingFont;
+    font-size:40px;
+    line-height: 50px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: $defaultColor;
+    @include tablet {
+        font-size: 30px;
+        line-height: 1.2;
+        letter-spacing: 4px;
+    }
+}
+
+@mixin sqz-h3 {
+    font-family: $bodyFont;
+    font-size:22px; 
+    line-height: 32px;
+    color: $defaultColor;
+    letter-spacing: 1.9px;
+    margin-bottom: 28px;
+
+}
+
+@mixin sqz-h4 {
+    font-family: $headingFont;
+    font-size:22px; 
+    line-height: 32px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: $defaultColor;
+}
+
+@mixin sqz-h5 {
+    font-family: $bodyFont;
+    font-size:20px;
+    line-height: 32px;
+    color: $defaultColor;
+}
+@mixin sqz-h6 {
+    font-family: $navFont;
+    font-size:14px;
+    line-height: 24px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: $darkColor;
+    margin: 20px 0 0;
+    @include tablet {
+        font-size: 12px;
+        line-height: 25px; 
+    }
+}

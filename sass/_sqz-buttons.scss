@@ -1,0 +1,94 @@
+// buttons
+
+.sqz-btn, .gform_button, input[type="button"] {
+    background: transparent;
+    height:$btnHeight; 
+    min-width:130px;
+    cursor: pointer;
+    border: 2px solid $plainColor;
+    border-radius: 0;
+    padding:10px 30px;
+    color:$plainColor;
+    display:inline-block;
+    text-align:center;
+    font-family: $navFont;
+    font-size:16px;
+    line-height: 25px;
+    @include sqz-transition;
+    margin: 30px 0 0;
+    -webkit-appearance:none;
+    text-decoration: none;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    &:hover, &:focus {
+    
+        background: transparent !important;
+        border-color: $secondaryColor;
+        
+    }
+
+
+    &.sqz-btn_primary {
+        background: $secondaryColor;
+        color: $darkColor;
+        border-color: $secondaryColor;
+        &:hover, &:focus {
+            background: transparent;  
+            color: $secondaryColor !important;
+        }
+    
+    }
+    &.sqz-btn_dark {
+        background: $darkColor;
+        color: $plainColor!important;
+        border-color: $darkColor;
+        &:hover, &:focus {
+            background: transparent; 
+            color: $darkColor !important;
+        }
+    }
+    &.sqz-btn_center {
+        display: table !important;
+        margin: 25px auto 0;
+        @include phone {
+            width: 100%;
+        }
+        span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+
+   
+    &.sqz-btn_secondary {
+        background: $secondaryColor;
+        border: none !important;
+        &:hover {
+            color: $plainColor;
+            background: tint($secondaryColor,20%);
+        }
+    }
+    &.sqz-btn_small {
+        width: auto;
+        max-width: 100%;
+        height: 50px;
+        min-width: 0;
+        padding: 10px 30px;
+        font-size: 1.25rem;
+    }
+    &.sqz-btn_large {
+        width: 360px;
+        max-width: 100%;
+        @include phone {
+            width: auto;
+        }
+    }
+  
+ 
+ 
+    
+
+}
+
+
+

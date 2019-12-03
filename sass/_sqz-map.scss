@@ -1,0 +1,30 @@
+.sqz-map_wrap {
+    position: relative;
+    z-index: 2;
+}
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none !important;
+}
+.gmnoprint div {
+    background:none !important;
+}
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+.sqz-map {
+    height: 500px;
+    @include phone {
+        // width: calc(100% - 50px);
+        // margin: 0 25px;
+        height: calc(100vw - 50px);
+        // margin-bottom: 60px;
+    }
+}
+.sqz-map > div {
+    position: absolute;
+    width: 140% !important;
+    height: 140% !important;  //that will do the trick
+    left: -20% !important;
+    top: -20% !important;
+    right: -20%!important;
+    bottom: -20% !important;
+}

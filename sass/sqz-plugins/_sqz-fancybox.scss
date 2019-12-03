@@ -1,0 +1,118 @@
+// fancybox
+
+
+.fancybox-skin, .fancybox-wrap, .fancybox-inner {
+    background: none;  
+}
+
+.fancybox-outer {
+    &:before {
+        content: '';
+        position: absolute;
+        top: -156px;
+        left: 50%;
+        width: 338px;
+        height: 126px;
+        margin-left: -169px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+    }
+}
+.fancybox-type-iframe .fancybox-inner {
+    overflow: hidden !important;
+}
+.fancybox-opened {
+    .fancybox-skin {
+        background: none;
+        box-shadow: none;
+        .fancybox-title {
+            width: 100%;
+            min-width: 800px;
+            @include tablet {
+                min-width: 0;
+            }
+         //   background: $primaryColor;
+            padding: 0 40px;
+            margin-top: 20px;
+            color: $plainColor;
+            font-size: 24px;
+            line-height: 40px;
+            @include sqz-bold;
+            text-align: center;
+            left: 50%;
+            transform: translateX(-50%);
+            span {
+                @include sqz-regular;
+            }
+            .sqz-project_title {
+                display: inline;
+                color: $plainColor;
+                @extend .sqz-h4;
+                @include sqz-medium;
+            }
+            .sqz-img_count {
+                height: 64px;
+                width: 136px;
+                background: $secondaryColor;
+                color: $plainColor;
+                text-align: center;
+                display: inline-block;
+                position: absolute;
+                right: 192px;
+                top: 0;
+                line-height: 64px;
+                span {
+                    @include sqz-light;
+                }
+                
+            }
+        }
+        .fancybox-nav {
+            z-index: 9999;
+            width: 24px;
+            height: 24px;
+            top: auto;
+            bottom: -102px;
+            background: none;
+            color: $defaultColor;
+            //.sqz-transition(0.3s);
+     
+           
+            &:hover {
+                background: none;
+                opacity: 0.5;
+            }
+            &.fancybox-next{
+                right: 50%;
+                margin-right: -85px;
+                bottom: -100px;
+            }
+            &.fancybox-prev {
+                left: 50%;
+                margin-left: -75px;
+                background: none;
+            }
+        }
+        .fancybox-close {
+            width: 24px;
+            height: 24px;
+            background: none;
+            top: auto;
+            right: 50%;
+            bottom: -40px;
+            margin-right: -12px;
+            z-index: 9999;
+            
+            &:hover{
+                background: none;
+                opacity: 0.5;
+            }
+       
+        }
+    }
+}
+
+.fancybox-overlay{
+    background: rgba($primaryColor, 0.97);
+}

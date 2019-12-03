@@ -1,0 +1,53 @@
+//default listing
+@mixin sqz-default_listing {
+  ul {
+      margin-bottom: 1rem;
+        li {
+            list-style: none;
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 2px;
+            &:before {
+                content: '\2022';
+                margin-right: 14px;
+                font-size: 0.75rem;
+                position: absolute;
+                left: 0;
+                font-size: 20px;
+                color:inherit;
+                .text-center & {
+                    position: static;
+                }
+            }
+            li {
+                padding-left: 20px;
+              //  list-style-type: circle;
+                li {
+                //    list-style-type: disc;
+                }
+            }
+        }
+        ul{
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+    }
+
+    ol {
+        li {
+            margin-left: 20px;
+            li {
+                list-style-type: lower-alpha;
+                margin-bottom: 7px;
+                li {
+                    list-style-type: lower-roman;
+                }
+            }
+        }
+        ol{
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+    }
+}

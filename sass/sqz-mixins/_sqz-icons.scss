@@ -1,0 +1,75 @@
+// icon font
+@font-face {
+    font-family: 'sqz-icon';
+    src: url('../library/sqz-icons/font/sqz-icon.eot?67237846');
+    src: url('../library/sqz-icons/font/sqz-icon.eot?67237846#iefix') format('embedded-opentype'),
+    url('../library/sqz-icons/font/sqz-icon.woff?67237846') format('woff'),
+    url('../library/sqz-icons/font/sqz-icon.ttf?67237846') format('truetype'),
+    url('../library/sqz-icons/font/sqz-icon.svg?67237846#sqz-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+[class^="sqzi-"]:before, [class*=" sqzi-"]:before {
+  font-family: "sqz-icon";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  color: #FFF;
+  /* opacity: .8; */
+  
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.sqzi-facebook:before { content: '\e800'; } /* '' */
+.sqzi-google-plus:before { content: '\e801'; } /* '' */
+.sqzi-instagram:before { content: '\e802'; } /* '' */
+.sqzi-linkedin:before { content: '\e803'; } /* '' */
+.sqzi-pinterest:before { content: '\e804'; } /* '' */
+.sqzi-twitter:before { content: '\e805'; } /* '' */
+.sqzi-youtube:before { content: '\e806'; } /* '' */
+.sqzi-facebook_new:before { content: '\e807'; } /* '' */
+.sqzi-instagram_new:before { content: '\e808'; } /* '' */
+.sqzi-pinterest_new:before { content: '\e809'; } /* '' */
+.sqzi-twitter_new:before { content: '\e80a'; } /* '' */
+.twitter-box:before { content: '\e80c'; } /* '' */
+.facebook-box:before { content: '\e80d'; } /* '' */
+
+[class^="sqzi-"], [class*=" sqzi-"] {
+  font-family: 'sqz-icon';
+  font-style: normal;
+  font-weight: normal;
+  
+  /* fix buttons height */
+  line-height: 1em;
+  
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+}

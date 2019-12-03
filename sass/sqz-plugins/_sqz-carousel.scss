@@ -1,0 +1,48 @@
+//carousel
+
+.sqz-carousel {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: auto;
+    .sqz-item {
+        padding-left: 15px;
+        padding-right: 15px;
+    }   
+    .owl-buttons {
+        .owl-prev {
+            color: $defaultColor;
+            left: -80px;
+        }
+        .owl-next {
+            color: $defaultColor;
+            right: -80px;
+        }
+    }
+}
+#sqz-main_innerslider {
+    padding-bottom: 42px;
+}
+.owl-dots {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    .owl-dot {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        display: inline-block;
+        border-radius: 50%;
+        overflow: hidden;
+        span {
+            position: relative;
+            display: block;
+            width: 100%; 
+            height: 100%;
+            background-color: rgba($darkColor, 0.2);
+        }
+        &:hover, &.active {
+            background-color: rgba($darkColor, 1);
+        }
+    }
+}

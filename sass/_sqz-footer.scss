@@ -1,0 +1,145 @@
+//footer
+#sqz-footer {
+    background: $footerBgr;  
+    font-size: $footerFontSize;
+    color: $footerColor;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    padding: 0;
+    @include phone {
+        text-align: center;
+    }
+
+    #sqz-foot_logo {
+        width: 40px;
+        cursor: pointer;
+    }
+    .sqz-widget_title {
+        margin-bottom: 8px;
+        @include sqz-bold;
+        @include phone {
+            margin-top: 40px;
+            text-align: center;
+        }
+        i {
+            visibility: hidden;
+            @include tablet {
+                visibility: visible;
+                float: right;
+            }
+        }
+        &.sqz-open i:before {
+            content: '\e806';
+        }
+    }
+    .sqz-widget_area {
+        margin-bottom: 10px;
+        @include phone {
+            text-align: center;
+        }
+        span {
+            padding: 0 12px 0 0;
+            position: relative;
+            display: inline-block;
+            
+            a {
+                @include sqz-regular;
+                border-bottom: none;
+            }
+            @include tablet {
+                display: block;
+            }
+        }
+        &.widget_recent_entries {
+            li {
+                margin: 0 0 10px;
+            }
+        }
+        .sqz-hidden_block {
+            @include tablet {
+                display: none;
+            }
+        }
+        address {
+            span {
+                width: 72px;
+                display: inline-block;
+            }
+            i {
+                color: $plainColor;
+                margin-right: 12px;
+                font-size: 1.125rem;
+                @include phone {
+                    display: none;
+                }
+            }
+            p {
+                margin-bottom: 5px;
+            }
+        }
+    }
+ 
+    .sqz-copyright {
+        display: inline-block;
+        margin:0;
+        @include tablet {
+            position: relative;
+            margin-top: 10px;
+            display: block;
+        }
+        @include phone {
+            display: inline-block;
+        }
+    }
+    .sqz-site_by {
+        margin: 0;
+        letter-spacing: normal;
+        text-transform: none;
+    }
+    a {
+        color: $plainColor;
+
+        &:hover {
+            color: $secondaryColor;
+        }
+    }
+    .sqz-footer_bottom{
+        text-transform: uppercase;
+        font-family: $navFont;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 4px;
+        padding: 0 0 55px;
+        color: #888;
+        a {
+            color: $plainColor;
+        }
+        margin-top: 0;
+        @include small-phone {
+            padding-bottom: 60px;
+        }
+        .sqz-footer_logo{
+            max-width: 160px;
+            margin: 0 auto 20px;
+            @include tablet {
+                margin-bottom: 7px;
+            }
+            a{
+                border: none;
+            }
+        }
+        nav{
+            display: inline-block;
+            margin-left: 5px;
+            .sqz-footer_navigation{
+                li{
+                    display: inline-block;
+                    margin-right: 8px;
+                   
+                }
+            }
+        }
+    }
+}
+

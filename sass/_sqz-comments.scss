@@ -1,0 +1,53 @@
+//comments
+$articlePadding: 20px;
+
+#sqz-comments {
+    padding: 40px 0;
+    .sqz-comments_title {
+        margin: 0 0 20px;
+    }
+    .sqz-reply {
+        color: $defaultColor;
+        @extend .sqz-bold;
+    }
+}
+
+#respond {
+    padding: $articlePadding;
+    background: $plainColor;
+}
+.sqz-comment_list {
+    list-style: none;
+    ul {
+        list-style: none;
+    }
+    li.sqz-comment {
+        background: tint($defaultColor,95%);
+        &.odd {
+            background: tint($defaultColor,90%);
+        }
+        article {
+            padding: $articlePadding;
+        }
+        &.depth-2 {
+            article {
+                padding-left: $articlePadding*2;
+            }
+        }
+        &.depth-3 {
+            article {
+                padding-left: $articlePadding*3;
+            }
+        }
+        &.depth-4 {
+            article {
+                padding-left: $articlePadding*4;
+            }
+        }
+        .sqz-comment_author {
+            margin: 0 0 0.625rem;
+            @extend .sqz-bold;
+            font-size: 1rem;
+        }
+    }
+}

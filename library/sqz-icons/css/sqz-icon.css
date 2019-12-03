@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'sqz-icon';
+  src: url('../font/sqz-icon.eot?60184991');
+  src: url('../font/sqz-icon.eot?60184991#iefix') format('embedded-opentype'),
+       url('../font/sqz-icon.woff2?60184991') format('woff2'),
+       url('../font/sqz-icon.woff?60184991') format('woff'),
+       url('../font/sqz-icon.ttf?60184991') format('truetype'),
+       url('../font/sqz-icon.svg?60184991#sqz-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'sqz-icon';
+    src: url('../font/sqz-icon.svg?60184991#sqz-icon') format('svg');
+  }
+}
+*/
+ 
+ [class^="sqzi-"]:before, [class*=" sqzi-"]:before {
+  font-family: "sqz-icon";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.sqzi-facebook:before { content: '\e800'; } /* '' */
+.sqzi-google-plus:before { content: '\e801'; } /* '' */
+.sqzi-instagram:before { content: '\e802'; } /* '' */
+.sqzi-linkedin:before { content: '\e803'; } /* '' */
+.sqzi-pinterest:before { content: '\e804'; } /* '' */
+.sqzi-twitter:before { content: '\e805'; } /* '' */
+.sqzi-youtube:before { content: '\e806'; } /* '' */

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'HurmeGeometricSans2-Regular';
+  src: url('HurmeGeometricSans2-Regular.eot');
+  src: url('HurmeGeometricSans2-Regular.woff2') format('woff2'),
+       url('HurmeGeometricSans2-Regular.woff') format('woff'),
+       url('HurmeGeometricSans2-Regular.ttf') format('truetype'),
+       url('HurmeGeometricSans2-Regular.svg#HurmeGeometricSans2-Regular') format('svg'),
+       url('HurmeGeometricSans2-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

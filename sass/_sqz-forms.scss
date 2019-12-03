@@ -1,0 +1,22 @@
+//form styling
+.sqz-form_control {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: tint($defaultColor, 90%);
+    box-shadow: none;
+    padding: 15px 20px;
+    line-height: 20px;
+}
+
+input[type="text"] {
+    @extend .sqz-form_control;
+}
+textarea.form-control {
+    @extend .sqz-form_control;
+    height: 150px;
+    resize: vertical;
+}
+.form-group {
+    margin-bottom: 20px;
+}

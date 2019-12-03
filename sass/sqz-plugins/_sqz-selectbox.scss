@@ -1,0 +1,68 @@
+@import "../library/jquery-nice-select/scss/nice-select";
+
+.nice-select {
+    @include sqz-form_control;
+    .list {
+        background: $plainColor;
+        border-radius: 0;
+        border: 1px solid $darkColor;
+        box-shadow: none; 
+        left: 0;
+        right: 0;
+        margin-top: 0;
+        // height: 400px;
+        overflow: auto;
+        .option {
+            padding: 10px !important;
+            color: $darkColor;
+            text-align: left !important;
+            min-height: 1px !important;
+            line-height: 1.4 !important;
+            &:hover, &.focus, &.selected.focus {
+                background: transparent;
+                color: $secondaryColor;
+            }
+        }
+        &:hover {
+            .option:not(:hover) {
+                background: transparent;
+            }
+        }
+    }
+    &:after {
+        border-color: $plainColor;
+        width: 1rem;
+        height: 1rem;
+        right: 1.5rem;
+        margin-top: -0.5rem;
+    }
+    .current{
+        position: relative;
+        display: block;
+        &:after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%) rotate(45deg);
+            width: 12px;
+            height: 12px;
+            border: 2px solid $darkColor;
+            border-top: none;
+            border-left: none;
+            @include sqz-transition;
+        }
+    }
+    &:hover{
+        span{
+            &:after{
+                border-color: $secondaryColor;
+            }
+        }
+    }
+
+}
+.nice-select .list:hover .option.selected {
+    background: transparent !important;
+    color: $secondaryColor;
+}

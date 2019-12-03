@@ -1,0 +1,54 @@
+/*!
+Theme Name: SQZ Toolbox Light
+Theme URI: http://underscores.me/
+Author: Squeeze Creative
+Author URI: https://squeezecreative.com.au/
+Description: Squeeze Creative, a digital creative studio in Sydney, specialising in web design, logo and brand identity design. theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: sqz-toolbox
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+*/
+
+
+/****************************************************/
+body {background:#fff;}
+@media (min-width: 1200px) {
+	.container, .section-promotion_slider .owl-nav {
+		max-width: 1400px;
+	}
+}
+#sqz-content {overflow:hidden;}
+.sqz-center {
+	max-width:80%;	
+	margin:auto;
+}
+
+.sqz-wide{
+	max-width: 100vw;
+	margin-left: -80px;
+	margin-right: -80px;
+}
+
+.sqz-full {
+	margin: 0 calc(50% - 50vw);
+	max-width: 100vw;
+	width: 100vw;
+}
+
+@media (max-width: 920px) {
+	.alignwide {
+		margin: 32px -76px;
+		max-width: 920px;
+		width: 920px;
+	}
+}
+
+.sqz-slide{
+	position: relative;
+}

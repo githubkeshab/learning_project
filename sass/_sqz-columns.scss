@@ -1,0 +1,175 @@
+.sqz-section {
+    &.sqz-no_padding {
+        padding: 0;
+    }
+    &.sqz-pt_0 {
+        padding-top: 0 !important;
+    }
+    &.sqz-pb_0 {
+        padding-bottom: 0 !important;
+    }
+    &.sqz-m_pb_0 {
+        @include phone {
+            padding-bottom: 0 !important;
+        }
+    }
+    &.sqz-small_padding {
+        padding: 40px 0;
+        
+    }
+    &.sqz-medium_padding {
+        padding: 54px 0 55px;
+    }
+    &.sqz-large_padding {
+        padding: 110px 0; 
+        @include tablet {
+            padding: 60px 0;
+        }
+        .sqz-section_content {
+            margin-bottom: 5.938rem;
+            @include tablet {
+                margin-bottom: 2.5rem;
+            }
+            @include phone {
+                margin-bottom: 1.786rem;
+            }
+            h4 {
+                margin-top: 0;
+            }
+        }
+
+    }
+    &.sqz-exlarge_padding {
+        padding: 240px 0;
+        @include tablet {
+            padding: 120px 0;
+        }
+    }
+    @include tablet {
+      //  text-align: center;
+  }
+
+  &.sqz-light_bgr {
+    background-color: tint($darkColor,93.7%);
+    color: $darkColor;
+    .sqz-module_content * {
+            color: $darkColor;
+       }
+       a {
+        color: $defaultColor;
+        &:hover{
+            color: $secondaryColor;
+        }
+        &.sqz-btn{
+            color: $plainColor;
+        }
+    }
+}
+    &.sqz-primary_bgr {
+        background-color: $primaryColor;
+        color: $plainColor;
+        h3 {
+            color: $plainColor;
+            @include phone {
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
+        }
+        a {
+            color: $plainColor;
+        }
+        .sqz-module_content * {
+            color: $plainColor;
+        }
+    }
+    &.sqz-dark_bgr {
+        background-color: $darkColor;
+        .sqz-module_content *{
+            color: $plainColor;
+        }
+    }
+    &.sqz-ex_dark_bgr {
+       background-color: tint($darkColor,50%);
+       color: $plainColor;
+       h2 {
+        color: $plainColor;
+        }
+    }
+    &.sqz-secondary_bgr {
+        background-color: $secondaryColor;
+        color: $plainColor;
+        * {
+            color: $plainColor;
+        }
+    }
+
+    &.sqz-plain_bgr {
+        background-color: $plainColor;
+        .sqz-module_content * {
+            color: $darkColor;
+        }
+        a {
+        //    color: $primaryColor;
+        }
+    }
+    &.sqz-has_overlay  {
+        .sqz-moodule_content * {
+            color: $plainColor;
+        }
+        &.sqz-plain_bgr {
+            .sqz-module_content * {
+                color: $plainColor;
+            }
+        }
+    }
+
+    
+&.sqz-text_light {
+    color: $plainColor;
+    h3, a {
+        color: $plainColor;
+    }
+}
+&.sqz-has_icons {
+    background-position: bottom center;
+    background-size: contain;
+}
+&.sqz-clients_bgr {
+    background-size: contain !important;
+    background-position: bottom center;
+    h3 {
+        color: $primaryColor;
+    }
+}
+
+&.sqz-three_col {
+    h4 {
+        margin: 0;
+    }  
+}
+}
+
+.sqz-has_overlay {
+    position: relative;
+    * {
+        color: $plainColor;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($darkColor, 0.8);
+        z-index: 1;
+    }
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.text-center {
+    text-align: center;
+}

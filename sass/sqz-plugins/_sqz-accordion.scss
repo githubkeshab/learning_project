@@ -1,0 +1,92 @@
+//accordion
+//bootstrap mixins
+// @import "bootstrap/mixins/panels";
+@import "bootstrap/mixins/border-radius";
+//bootstrap components
+@import "bootstrap/transitions";
+//@import "bootstrap/panels";
+
+// bootstrap 4
+.card {
+    border: solid 1px tint($defaultColor, 90%);
+    background: none;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    .card-header {
+        border-bottom: none;
+        background: none;
+        padding:0;
+        color: $primaryColor;
+        border-radius: 0;
+        cursor: pointer;
+        h3 {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding:30px 30px 10px;
+            position: relative;
+            font-family: $bodyFont;
+            letter-spacing: normal;
+            @include sqz-transition;
+            @include phone {
+               // font-size: 14px;
+              //  line-height: 20px;
+                padding-right: 40px;
+                padding-left: 20px;
+                padding: 20px 40px 10px 20px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            &:after {
+                content: "\f376";
+                font: normal normal normal 18px/1 "Material Design Icons";
+                float: right;
+                position: absolute;
+                right: 20px;
+                top:32px;
+              //  font-size: 18px;
+                transform: none;
+                color: #cfcfcf;
+                text-rendering: auto;
+                -webkit-font-smoothing:antialiased;
+                @include phone {
+                    top:23px;
+                }
+            }
+            &.collapsed {
+                padding-bottom: 30px;
+                @include phone {
+                    padding-bottom: 20px;   
+                }
+                &:after {
+                    content: "\f159";
+                    transform: rotate(45deg);
+                    color: $primaryColor;
+                }
+            }
+
+        }
+
+    }
+    .card-body {
+        padding: 0 30px 30px;
+        border: none;
+        margin-bottom: 0;
+        p:last-child {
+            margin-bottom: 0;
+        }
+        @include phone {
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow-x: auto;
+        }
+        a:hover {
+            border-bottom-color: $primaryColor;
+        }
+
+    }
+    &:last-child {
+        .card-header {
+            margin-bottom: 0;   
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@mixin sqz-clearfix {
+    zoom:1;
+  &:before, &:after {
+      content:"";
+      display:table;
+    }
+    &:after{
+        clear: both;
+    }
+}
+
+
+
+@import "sqz-fonts";
+@import "sqz-responsive";
+//@import "sqz-gradient";
+@import "sqz-radius";
+@import "sqz-transitions";
+@import "sqz-default-listing";
+@import "sqz-icons";

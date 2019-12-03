@@ -1,0 +1,64 @@
+//heading styles
+.sqz-section_header {
+    margin-bottom: 47px;
+    @include tablet {
+        margin-bottom: 37px;
+    }
+    @include phone {
+        margin-bottom: 22px;
+    }
+    .sqz-section_title {
+        margin: 0;
+        padding: 0;
+        @include sqz-h2;
+    }
+}
+.intro-content.sqz-section.sqz-small_padding {
+    @include phone {
+        padding-top: 0;
+        padding-bottom: 7px;
+    }
+}
+
+
+.sqz-entry_header {
+    margin: 0 0 10px;
+    .sqz-entry_title {
+        margin: 0 0 7px;
+        @include sqz-h3;
+        @include sqz-bold;
+        color: $primaryColor;
+        a {
+            color: $defaultColor;
+            @extend .sqz-borderBottomNone;
+        }
+    }
+    @include phone {
+        margin-bottom: 10px;
+    }
+}
+
+.sqz-entry_footer { 
+    font-size: 14px;
+    margin: 0 0 30px;
+    .sqz-item {
+        float: left;
+        display: inline-block;
+        padding-left: 10px;
+        &:first-child {
+            padding-left: 0;
+            &:before {
+                display: none;
+            }
+        }
+        color: $bodyColor;
+        span {
+            color: $defaultColor;
+        }
+        &:before {
+            content: '|';
+            padding-right: 10px;
+            color: #cbcbcb;
+        }
+    }
+}

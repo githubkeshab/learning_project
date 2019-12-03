@@ -1,0 +1,32 @@
+//breadcrumb
+#sqz-breadcrumbs {
+    background: tint($defaultColor, 96.5%);
+    padding: 12px 0;
+    font-size: 0.875rem;
+    ul {
+        list-style: none;
+        li {
+            display: inline-block;
+            padding: 0 8px 0 0;
+            position: relative;
+            a {
+                padding-bottom: 1px;
+                &:hover {
+           //         color: $primaryColor;
+                    &:after {
+                        color: $bodyColor;
+                    }
+                } 
+            }
+            &:after {
+                content: '›';
+                margin-left: 10px;
+            }
+            &:last-child{
+                &:after{
+                    display: none;
+                }
+            } 
+        }
+    }
+}

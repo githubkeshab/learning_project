@@ -1,0 +1,52 @@
+/*!
+ * Squeeze Toolbox v1.1.1 
+ * Copyright 2016 Squeeze Creative.
+ * Framework Bootstrap v3.3.6 (http://getbootstrap.com)
+*/
+//@import 'https://fonts.googleapis.com/css?family=Arvo:400,400i,700,700i';
+//@import '../webfonts/stylesheet.css';
+@import "sqz-function";
+@import "sqz-variables";
+
+@import "sqz-webfonts";
+
+//mixins
+@import "sqz-mixins/sqz-mixins";
+
+
+@import "sqz-base";
+
+
+@import "sqz-buttons";
+
+// additional stylings
+
+html, body {
+    background: transparent;
+}
+
+body {
+
+    &.wp-autoresize {
+        padding: 20px!important;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+//@include sqz-default_listing;
+ ol {
+        margin-bottom: 16px;
+        li {
+            margin-bottom: 7px;
+        }
+    }
+
+body.webkit strong, body.webkit b {
+    font-weight: 400 !important;
+}
+blockquote{
+    color: $darkColor;
+}

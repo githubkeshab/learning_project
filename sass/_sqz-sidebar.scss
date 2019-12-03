@@ -1,0 +1,209 @@
+//sidebar
+#sqz-sidebar {
+    position: relative;
+    .sqz-sidebar_widget {
+        margin-bottom: 3.75rem;
+        position: relative;
+        @include phone {
+            margin-bottom: 30px;
+        }
+        .sqz-widget_title {
+            margin:0 0 20px; 
+            display: block;
+            @extend .sqz-clearfix;
+            position: relative;
+            @include phone {
+                cursor: pointer;
+                background: $secondaryColor;
+                color: $plainColor;
+                height: 60px;
+                line-height: 30px;
+                padding: 16px 20px;
+                span {
+                    color: $darkColor;
+                    i {
+                        color: $primaryColor;
+                    }
+                }
+
+            }
+            i {
+                position: absolute;
+                top: 22px;
+                right: 30px;
+                visibility: hidden;
+                @include phone {
+                    visibility: visible;
+                }
+            }
+
+        }
+        ul {
+            list-style: none;
+            li {
+                display: block;
+                @extend .sqz-clearfix;
+                padding: $padding 0;
+                position: relative;
+                @include tablet {
+                    font-size: 1rem;
+                }
+                .sqz-thumb {
+                    width: 80px;
+                    height: 80px;
+                    margin-right: 10px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    float: left;
+                    margin-bottom: 0;
+                    a {
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+                .sqz-post_title {
+                    margin: 0;
+                    display: inline-block;
+                    text-transform: none;
+                    @extend .sqz-bold;
+                    
+                    a {
+                        padding: 0;
+                    }
+                }
+                p {
+                    clear: both;
+                }
+                &:first-child {
+                    padding-top: 0;
+                }
+                &.sqz-has_thumbnail {
+                    .sqz-post_title {
+                        float: right;
+                        width: calc(100% - 100px);
+                    }
+                }
+            }
+            
+            .post-date {
+                font-size: 1rem;
+            }
+        }
+        //side navigation
+        .sqz-side_navigation, .menu {
+            li {
+                display: block;
+                padding: 0 0 7px;
+                border-bottom: 1px solid #cbcbcb;
+                margin-bottom: 10px;
+                h5{
+                    font-weight: 400;
+                }
+                a {
+                    display: initial;
+                    padding: 0;
+               //     color: $defaultColor;
+                    @include phone {
+                        color: $plainColor;
+                        border-bottom: none;
+                    }
+                    @include sqz-transition;
+                    &:hover {
+                     //   color: $defaultColor;
+                        @include phone {
+                            color: $primaryColor;   
+                        }
+                    }
+                }
+                &.current-menu-items a, &.current-cat a {
+                    color: $defaultColor;
+                    border-bottom-color: transparent;
+                    @include phone {
+                        color: $primaryColor;   
+                    }
+                }
+            }
+        }
+        &.widget_pages {
+            li {
+                padding: 0;
+                a {
+                    display: block;
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+    .sqz-widget_area {
+        margin-bottom: 20px;
+    }
+    .sqz-hidden_block {
+        @include phone {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            right: 0;
+            background: $secondaryColor;
+            padding: 0 20px 10px;
+            z-index: 9;
+            ul {
+                display: block;
+            }
+        }
+    }
+    address {
+       i {
+        color: $primaryColor;
+    }
+}
+.gform_wrapper{
+    .top_label.gform_fields{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .top_label.gform_fields{
+        .gfield{
+            padding: 0 !important;
+            margin: 0 !important;
+            .ginput_container_name{
+                span{
+                    width: 100% !important;
+                }
+            }
+            input, textarea{
+                border: none;
+                margin: 0 0 10px 0;
+            }
+            label{
+                display: none;
+            }
+        }
+    }
+    .gform_footer{
+        .gform_button{
+            margin-top: 30px;
+        }
+    }
+} 
+.widget_search{
+    .searchform{
+        .screen-reader-text{
+            display: none;
+        }
+        input[type="submit"]{
+            display: none;
+        }
+    }
+}
+}
+
+.page-template-template-contact {
+    #sqz-sidebar {
+        .sqz-widget_title {
+            text-transform: none;
+            color: $primaryColor;
+            margin-bottom: 7px;
+        }
+    }
+}

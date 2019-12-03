@@ -1,0 +1,45 @@
+//social
+
+.sqz-social {
+    display: block;
+    text-align: center;
+    @include sqz-transition(0.5s);
+    @include sqz-clearfix;
+    margin-top: 0;
+    li {
+        display: inline-block;
+        padding: 0;
+        margin: 0 15px 0 0;
+        height: 30px;
+        @include tablet{
+            margin-top: 4px;
+        }
+        &:before {
+            display: none;
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+    
+    a {
+        color: $plainColor;
+        border: solid 2px $plainColor;
+        @include sqz-transition;
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 36px;
+        display: block;
+        @include phone {
+            font-size: 24px;
+        }
+        &:hover {
+            border-color: $secondaryColor;
+            color: $defaultColor;
+        }
+        
+        }
+        
+    }
+}

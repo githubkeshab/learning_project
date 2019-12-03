@@ -1,0 +1,88 @@
+// Variables
+//-------------------------------------------------------------
+
+
+
+$gutter : 15px;
+
+//color options
+$defaultColor : rgb(45,42,43);
+$primaryColor: rgb(196,102,219); 
+$secondaryColor: rgb(63,206,239); 
+$darkColor : rgb(30,30,32);
+$plainColor: rgb(255,255,255);
+$bodyColor: tint($darkColor,0%);
+
+$placeholderColor: tint($darkColor,60%);
+$lightColor: tint($darkColor,90%);
+$darGrayColor: #afb2b2; // CP Gray
+$grayColor: #ddd;
+$headingColor: $primaryColor;
+$navColor : $plainColor;
+$navHoverColor : $secondaryColor;
+$navCurrentColor : $secondaryColor;
+$footerColor: $plainColor;
+$introColor : $darkColor;
+$selectionColor :#fff;
+$placeHolderColor : $bodyColor;
+
+$errorColor: #f30e0e;
+$linkColor: $secondaryColor;
+$linkHoverColor : $secondaryColor;
+
+
+//== Background
+$selectionBgr :$primaryColor;
+$bodyBackground: tint($primaryColor,60%);
+$topHeaderBgr: $plainColor; // navbar
+$headerBgr: $plainColor;
+$footerBgr: $darkColor;
+$DarkBgr: $defaultColor;
+$subMenuBgr: rgb(68,68,68);
+$mobileMenuBgr : $plainColor;
+
+
+
+//border
+$lightBorder :tint($darkColor, 50%);
+$linkBorder :$bodyColor;
+$footerLinkBorder : #444;
+
+
+//font family
+$bodyFont: 'MuseoSans-300', sans-serif;
+$headingFont: 'HurmeGeometricSans-Bold';
+$navFonts : 'HurmeGeometricSans-SemiBold';
+$navFont: 'HurmeGeometricSans-SemiBold';
+$iconFont: MaterialDesignIcons;
+
+
+//font size & line height
+
+$bodyFontSize: 18px;
+$bodyLineHeight: 28px;
+$headingFontSize: 1.5em;
+$footerFontSize: 17px;
+
+//font weight
+$light: 300;
+$regular: 400;
+$medium : 600;
+$bold: 700;
+
+//box model
+$margin: 1.25rem;
+$padding: 1.25rem;
+$paraMargin : 1.235294117647059rem;
+$inputHeight: 40px;
+$textareaHeight: 213px;
+$headerHeight: 100px;
+$subMenuWidth: 180px;
+$thumbMarginBottom: 40px;
+$btnHeight:50px;
+
+
+
+.fontItalic {
+    font-style: italic;
+}

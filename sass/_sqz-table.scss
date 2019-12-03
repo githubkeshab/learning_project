@@ -1,0 +1,19 @@
+.sqz-entry_content {
+    table {
+        border: solid 1px $secondaryColor;
+        th {
+            background: $secondaryColor;
+            color: $plainColor;
+        }
+        th, td {
+            border-bottom: solid 1px transparent;
+            border-right: solid 1px transparent;
+            border-color: $secondaryColor;
+            padding: 10px 0;
+            width: 50%;
+        }
+        @include tablet {
+            width: 100%;
+        }
+    }
+}

@@ -1,35 +1,43 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package SQZ_Toolbox
- */
+</div>
+<footer id="sqz-footer" class="sqz-section sqz-dark_color">
+ <?php 
+if ( !is_front_page() && is_home() ) {
+ $id=get_option('page_for_posts', true);
+} elseif(is_category()){
+	$id=get_option('page_for_posts', true);
+} else {
+  $id=$post->ID;
 
-?>
+} 
 
-	</div><!-- #content -->
+$sqz_cta_show = get_field('cta_show',$id);  	
+   if($sqz_cta_show  == 1){
+ get_template_part('partials/sqz', 'callofaction'); 
+   }
+ ?>
+ <?php get_template_part('partials/sqz', 'testimonial');?>
+        <!-- # Instragram Feeds start -->
+        <?php get_template_part('partials/sqz', 'instrgram-feeds'); ?>
+        <?php get_template_part('partials/sqz', 'social'); ?>
+        <?php get_template_part('partials/sqz', 'subscribes'); ?>
+        
+        
+        
+        <div class="sqz-footer_bottom text-md-center">
+           <div class="container-fluid">
+               <div class="row">
+                <hr>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sqz-toolbox' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'sqz-toolbox' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'sqz-toolbox' ), 'sqz-toolbox', '<a href="https://squeezecreative.com.au/">Squeeze Creative</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+                <div class="col-12 col-lg-8 text-lg-left">
+                        <p class="sqz-copyright">&copy; <?php echo esc_attr(get_bloginfo('name', 'display')); ?></p>
+                  <?php wp_nav_menu( array( 'theme_location' => 'footer-nav','menu_id' => 'sqz-footer_navigation', 'menu_class'=>'sqz-footer_navigation', 'container'=>'nav' ) ); ?></div>
+               <div class="col-12 col-lg-4  text-lg-right"> <span class="sqz-site_by">Site by <a href="//squeezecreative.com.au" target="_blank">Squeeze Creative</a></span></div>
+                </div>
+            </div>
+        </div>
 
+    </footer>
+</div><!--//#sqz-page-->
 <?php wp_footer(); ?>
 
 </body>

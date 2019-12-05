@@ -41,13 +41,15 @@ $=jQuery.noConflict();
 <body <?php body_class(); ?>>
 <header class="sqz-header">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-12 col-lg-auto">
+            	<div class="sqz-logo">
                 <?php if(is_front_page()) { echo '<h1>'; } else { echo '<h2>'; }  ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
                         <img src="<?php the_field('_logo', 'option'); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
                     </a>
                 <?php if(is_front_page()) { echo '</h1>'; } else { echo '</h2>'; }  ?>
+                </div>
             </div>
             <div class="col-12 col-lg">
                 <button class="sqz-toggle_menu"><span class="sqz-menu_bars"></span></button>

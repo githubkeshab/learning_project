@@ -1,17 +1,16 @@
+<?php
+
+/**
+ * Main Slider Block Template.
+ *
+ * @param   array $block The block settings and attributes.
+ * @param   string $content The block inner HTML (empty).
+ * @param   bool $is_preview True during AJAX preview.
+ * @param   (int|string) $post_id The post ID this block is saved to.
+ */
+?>
 <?php 
 
-	// Create class attribute allowing for custom "className" and "align" values.
-/*	$className = '';
-	if( !empty($block['className']) ) {
-	    $className .= ' ' . $block['className'];
-	}
-	if( !empty($block['align']) ) {
-	    $className .= ' align' . $block['align'];
-	}
-
-
-
-	*/
 	$sqz_top_space =get_field('sqz_top_space');
 	$sqz_bottom_space =get_field('sqz_bottom_space');
 	$sqz_bg_type =get_field('sqz_background_type');

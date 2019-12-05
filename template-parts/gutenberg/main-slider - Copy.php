@@ -9,17 +9,9 @@
  * @param   (int|string) $post_id The post ID this block is saved to.
  */
 
-$sqz_slider_effect = get_field('sqz_slider_effect');
-$sqz_slider_auto_play = get_field('sqz_auto_play');
 $sqz_slider_number = get_field('sqz_number_of_slides_to_show');
-$sqz_slider_height = get_field('sqz_slider_height');
-$sqz_slider_pagination = get_field('sqz_slider_pagination');
-$sqz_slide_speed = get_field('sqz_slide_speed');
-$sqz_slider_navigation = get_field('sqz_slider_navigation');
+$sqz_slider_speed = get_field('sqz_slide_speed');
 ?>
-
-
-<!-- <h1>Sider here</h1> -->
 <div  class="sqz-<?php echo esc_attr($block['align']); ?>  ">
 <?php if( have_rows('sqz_sliders_new') ): ?>
 	<div class="<?php echo $block['id'];?>" >
@@ -29,18 +21,16 @@ $sqz_slider_navigation = get_field('sqz_slider_navigation');
         $sqz_caption_position_h = get_sub_field('sqz_caption_position_h');
         $sqz_caption_position_v = get_sub_field('sqz_caption_position_v');
 		$sqz_mobile_slider_image = get_sub_field('mobile_slider_image');
-		$sqz_slider_caption = get_sub_field('sqz_slider_description');
-		$sqz_slider_link = get_sub_field('sqz_slider_button');
-		$sqz_columns_overlay_destop = get_sub_field('sqz_columns_overlay_destop');
-		$sqz_columns_overlay_mobile = get_sub_field('sqz_columns_overlay_mobile');
-
-
 		 $image_first_mobile=wp_get_attachment_image_src($sqz_mobile_slider_image,'mobile_banner_image');
 		  $image_first_mobile_2x=wp_get_attachment_image_src($sqz_mobile_slider_image,'mobile_banner_image_2x');
 		 $image_first=wp_get_attachment_image_src($sqz_slider_image,'banner_image');
 		  $image_first_2x=wp_get_attachment_image_src($sqz_slider_image,'banner_image_2x');
+		$sqz_slider_caption = get_sub_field('sqz_slider_description');
+		$sqz_slider_link = get_sub_field('sqz_slider_button');
 		//$sqz_slider_button_text = get_sub_field('_slider_button_text');
 		//$sqz_new_window = get_sub_field('new_window');
+		$sqz_columns_overlay_destop = get_sub_field('sqz_columns_overlay_destop');
+		$sqz_columns_overlay_mobile = get_sub_field('sqz_columns_overlay_mobile');
 
 		if($sqz_mobile_slider_image){
         $mobileimage=$image_first_mobile['0'];
@@ -81,7 +71,14 @@ $sqz_slider_navigation = get_field('sqz_slider_navigation');
 <?php endif; ?>
 </div>
 
-<?php  ?>
+<?php
+$sqz_slider_effect = get_field('sqz_slider_effect');
+$sqz_slider_auto_play = get_field('sqz_auto_play');
+$sqz_slide_speed = get_field('sqz_slide_speed');
+$sqz_slider_navigation = get_field('sqz_slider_navigation');
+$sqz_slider_pagination = get_field('sqz_slider_pagination');
+?>
+<?php echo $sqz_slide_speed; ?>
 <script>
 //<![CDATA[
 jQuery(document).ready(function($) {
@@ -114,5 +111,3 @@ jQuery(document).ready(function($) {
 });
 //]]>
 </script>
-
-</php ?>

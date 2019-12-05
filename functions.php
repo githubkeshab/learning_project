@@ -43,9 +43,43 @@ if ( ! function_exists( 'sqz_toolbox_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'sqz-toolbox' ),
-		) );
+		// Navigation Menus
+// Theme setup
+function sqz_toolbox_lignt_setup() {
+	// Navigation Menus
+	register_nav_menus(array(
+	'primary-nav' => __('Primary Navigation'),
+	'footer-nav' => __('Footer Navigation'),
+	'mobile-nav' => __('Mobile Navigation'),
+	));
+
+	// add featured image support
+	add_theme_support('post-thumbnails');
+	add_image_size( 'banner_image', 1920, 1080, true);
+	add_image_size( 'banner_image_2x', 3840, 2160, true);
+
+	add_image_size( 'calloff_thumb', 1570, 1570, true);
+	add_image_size( 'calloff_thumb_2x', 3140, 3140, true);
+
+	add_image_size( 'studiohome', 700, 400, true);
+	add_image_size( 'studiohome_2x', 1400, 800, true);
+
+	add_image_size( 'twoblock_image', 950, 600, true);
+	add_image_size( 'twoblock_image_2x', 950, 600, true);
+
+	add_image_size( 'threecolumn_img', 350, 200, true);
+	add_image_size( 'threecolumn_img_2x', 700, 400, true);
+
+	add_image_size( 'bloglistings_image', 500, 999999, false);
+	add_image_size( 'bloglistings_image_2x', 1000, 999999, false);
+
+
+	// Add post format support
+	//add_theme_support('post-formats', array('gallery','video','image'));
+}
+
+add_action('after_setup_theme', 'sqz_toolbox_lignt_setup');
+
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -123,8 +157,6 @@ function sqz_toolbox_scripts() {
 
 	wp_enqueue_style( 'sqz-toolbox-style-custom', get_template_directory_uri() . '/css/sqz-styles.css');
 
-
-    wp_enqueue_style('owl-carousel-transition', get_template_directory_uri() . "/library/owlcarousel/owl.transitions.css");
     wp_enqueue_style('fancybox', get_template_directory_uri() . "/library/fancybox/jquery.fancybox.css");
     wp_enqueue_style('sqz-styles', get_template_directory_uri() . "/css/sqz-styles.css", array(), rand(111, 9999), 'all');
     wp_enqueue_style('theme-styles', get_stylesheet_uri());
@@ -132,12 +164,12 @@ function sqz_toolbox_scripts() {
 	wp_enqueue_style('slick', get_template_directory_uri() . "/library/slick/slick.css");
 	wp_enqueue_style('slick-theme', get_template_directory_uri() . "/library/slick/slick-theme.css");
     
+
     wp_enqueue_script('modernizer', get_template_directory_uri() . '/js/vendor/modernizr-2.8.3.min.js', false, '2.8.3');
 	wp_enqueue_script( 'sqz-toolbox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	//wp_enqueue_script( 'sqz-toolbox-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	 wp_enqueue_script('masonary', get_template_directory_uri(). "/js/vendor/masonry.pkgd.min.js");
 	wp_enqueue_script('infinitescroll', get_template_directory_uri(). "/js/vendor/infinite-scroll.pkgd.min.js");
-    wp_enqueue_script('owl-carousel', get_template_directory_uri() . "/library/slick/slick.min.js");
+    wp_enqueue_script('slick-js', get_template_directory_uri() . "/library/slick/slick.min.js");
     wp_enqueue_script('fancybox', get_template_directory_uri() . "/library/fancybox/jquery.fancybox.js");
     wp_enqueue_script('jquery-selectbox', get_template_directory_uri() . "/library/jquery-nice-select/js/jquery.nice-select.min.js");
     wp_enqueue_script('retina', get_template_directory_uri() . "/js/vendor/retina.min.js");
@@ -161,16 +193,10 @@ wp_enqueue_script('jquery');
  */
 function sqz_block_editor_js_css() {
 wp_enqueue_style( 'sqz-editor-custom', get_template_directory_uri().'/css/sqz-editor.style.css');
-	wp_enqueue_style('owl-carousel', get_template_directory_uri() . "/library/owlcarousel/owl.carousel.css");
-    wp_enqueue_style('owl-carousel-transition', get_template_directory_uri() . "/library/owlcarousel/owl.transitions.css");
-
-
-
-    wp_enqueue_script('sqz-sripts-bootstrap', get_template_directory_uri() . "/js/bootstrap.min.js", array(), rand(111, 9999), 'all');
-    wp_enqueue_script('owl-carousel', get_template_directory_uri() . "/library/owlcarousel/owl.carousel.min.js");
-
-
-
+wp_enqueue_script('sqz-sripts-bootstrap', get_template_directory_uri() . "/js/bootstrap.min.js", array(), rand(111, 9999), 'all');
+wp_enqueue_style('slick', get_template_directory_uri() . "/library/slick/slick.css");
+wp_enqueue_style('slick-theme', get_template_directory_uri() . "/library/slick/slick-theme.css");
+wp_enqueue_script('slick-js', get_template_directory_uri() . "/library/slick/slick.min.js");
 
 }
 add_action( 'enqueue_block_editor_assets', 'sqz_block_editor_js_css' );
@@ -238,29 +264,38 @@ registerBlockType('namespace/block-all', {
 
 add_action('acf/init', 'squeeze_register_blocks');
 function squeeze_register_blocks() {
-
-    // check function exists.
     if( function_exists('acf_register_block_type') ) {
+
+        // Register a  Columns with media and text block.
+        acf_register_block_type(array(
+            'name'              => 'accordion-blocks',
+            'title'             => __('Accordion '),
+            'description'       => __('A custom accordion block in gutenberg.'),
+            'render_template'   => 'template-parts/gutenberg/accordion.php',
+            'category'          => 'sqz-blocks-full',
+            'icon'              => 'feedback',
+            'mode'				=> 'false',
+            'supports' => array( 
+                'align' => array('center','wide', 'full' ), 
+            ),
+
+        ));
+
+  		// testimonial
         acf_register_block_type(array(
             'name'              => 'testimonial',
             'title'             => __('Testimonial'),
             'description'       => __('A custom testimonial block.'),
             'render_template'   => 'template-parts/testimonial/testimonial.php',
             'category'          => 'sqz-blocks',
+             'mode'				=> 'false',
+            'supports' => array( 
+                'align' => array('center','wide', 'full' ), 
+            ),
+           
         ));
 
-
-        // Register a Full Width Column block.
-        // acf_register_block_type(array(
-        //     'name'              => 'globalcontent',
-        //     'title'             => __('Global Content'),
-        //     'description'       => __('It will be appears on every sqz blocks'),
-        //   /*  'render_template'   => 'template-parts/gutenberg/global-content.php',*/
-        //    /* 'category'          => 'sqz-blocks-full',
-        //     'icon'              => 'admin-site-alt3',*/
-        // ));
-
-
+        //slider
         acf_register_block_type(array(
             'name'              => 'mainsliders',
             'title'             => __('Slider'),
@@ -280,11 +315,16 @@ function squeeze_register_blocks() {
             'name'              => 'column-blocks',
             'title'             => __('Add Columns'),
             'description'       => __('A custom columns block in gutenberg.'),
-            'render_template'   => 'template-parts/gutenberg/global-content.php',
+            'render_template'   => 'template-parts/gutenberg/column.php',
             'category'          => 'sqz-blocks-full',
             'icon'              => 'admin-site-alt2',
+            'mode'				=> 'false',
+            'supports' => array( 
+                'align' => array('center','wide' ), 
+            ),
+
         ));
-        // Register a  Columns block.
+        // Register a  vertical space block.
         acf_register_block_type(array(
             'name'              => 'vertical-space-blocks',
             'title'             => __('Vertical Space '),
@@ -292,22 +332,71 @@ function squeeze_register_blocks() {
             'render_template'   => 'template-parts/gutenberg/vertical-space.php',
             'category'          => 'sqz-blocks-full',
             'icon'              => 'admin-site-alt1',
+            'mode'				=> 'false',
+            'supports' => array( 
+                'align' => array( 'full' ), 
+            ),
         ));
 
-        // Register a  Columns with media and text block.
+
+        // Register a  Media with text block.
         acf_register_block_type(array(
-            'name'              => 'accordion-blocks',
-            'mode'				=> 'false',
-            'title'             => __('Accordion '),
-            'description'       => __('A custom accordion block in gutenberg.'),
-            'render_template'   => 'template-parts/gutenberg/accordion.php',
+            'name'              => 'media-text-blocks',
+            'title'             => __('Media with Text'),
+            'description'       => __('A custom Media with text block in gutenberg.'),
+            'render_template'   => 'template-parts/gutenberg/media-text.php',
             'category'          => 'sqz-blocks-full',
-            'icon'              => 'feedback',
+            'icon'              => 'excerpt-view',
+            'mode'				=> 'false',
             'supports' => array( 
                 'align' => array('center','wide', 'full' ), 
             ),
+        ));
 
-        ) );
+
+        // Register a Carousel block.
+        acf_register_block_type(array(
+            'name'              => 'carousel-blocks',
+            'title'             => __('Carousel'),
+            'description'       => __('A custom Carousel block in gutenberg.'),
+            'render_template'   => 'template-parts/gutenberg/carousel.php',
+            'category'          => 'sqz-blocks-full',
+            'icon'              => 'slides',
+            'mode'				=> 'false',
+            'supports' => array( 
+                'align' => array('center','wide', 'full' ), 
+            ),
+        ));
+
+
+        // Register a  Call to Action block.
+        acf_register_block_type(array(
+            'name'              => 'cta-blocks',
+            'title'             => __('Call to Action'),
+            'description'       => __('A custom Call to Action block in gutenberg.'),
+            'render_template'   => 'template-parts/gutenberg/cta.php',
+            'category'          => 'sqz-blocks-full',
+            'icon'              => 'format-chat',
+            'mode'				=> 'false',
+            'supports' => array( 
+                'align' => array('center','wide', 'full' ), 
+            ),
+        ));
+
+        // Register a  Video with text block.
+        acf_register_block_type(array(
+            'name'              => 'video-text-blocks',
+            'title'             => __('Video with Text'),
+            'description'       => __('A custom Video with text block in gutenberg.'),
+            'render_template'   => 'template-parts/gutenberg/video-text.php',
+            'category'          => 'sqz-blocks-full',
+            'icon'              => 'playlist-video',
+            'mode'				=> 'false',
+            'supports' => array( 
+                'align' => array('center','wide', 'full' ), 
+            ),
+        ));
+
 
     }
 
